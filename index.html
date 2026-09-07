@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVERCLOCK CIRCUIT / WORLDBOOK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0a0b0d;
+  --panel:#131519;
+  --panel-2:#191c21;
+  --steel:#2a2f36;
+  --warn:#ff4b3e;
+  --fuel:#ffb020;
+  --chrome:#c9ced4;
+  --text:#e7e8ea;
+  --dim:#848c96;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--void);
+  color:var(--text);
+  font-family:'Noto Sans KR',sans-serif;
+  line-height:1.6;
+}
+.disp{font-family:'Rajdhani',sans-serif;}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 32px;
+  background:rgba(10,11,13,.82);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--steel);
+}
+nav .brand{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; letter-spacing:2px; color:var(--fuel);}
+nav ul{list-style:none; display:flex; gap:22px;}
+nav a{color:var(--dim); text-decoration:none; font-size:12.5px; letter-spacing:.5px; font-family:'Rajdhani',sans-serif; font-weight:600;}
+nav a:hover{color:var(--text);}
+@media (max-width:640px){ nav ul{gap:12px;} nav a{font-size:11px;} }
+
+/* ---------- marquee ---------- */
+.marquee{
+  background:#170c0b;
+  border-top:1px solid #3a1a17; border-bottom:1px solid #3a1a17;
+  overflow:hidden; white-space:nowrap;
+  padding:7px 0;
+}
+.marquee span{
+  display:inline-block; padding-left:100%;
+  animation:scroll 22s linear infinite;
+  font-family:'Rajdhani',sans-serif; font-weight:600; font-size:12px; letter-spacing:2px;
+  color:var(--warn);
+}
+@keyframes scroll{ 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:92vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  padding:120px 24px 60px;
+  position:relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 20%, rgba(255,176,32,.07), transparent 60%),
+    linear-gradient(180deg, var(--void), #0d0f12 70%, var(--void));
+}
+.hero .eyebrow{
+  font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:4px; font-size:12px;
+  color:var(--warn); margin-bottom:18px;
+}
+.hero h1{
+  font-family:'Rajdhani',sans-serif; font-weight:700; letter-spacing:2px;
+  font-size:clamp(40px,9vw,92px);
+  line-height:.95;
+  color:var(--text);
+}
+.hero h1 em{ font-style:normal; color:var(--fuel); }
+.hero p{
+  max-width:520px; margin:26px auto 0; color:var(--chrome); font-size:15px;
+}
+.hero .scroll{
+  margin-top:56px; font-family:'Rajdhani',sans-serif; font-size:11px; letter-spacing:3px; color:var(--dim);
+}
+.hero .scroll::after{
+  content:''; display:block; width:1px; height:34px; background:var(--steel); margin:10px auto 0;
+}
+
+/* ---------- section shell ---------- */
+section{
+  max-width:760px; margin:0 auto; padding:100px 24px 40px;
+  border-bottom:1px solid var(--steel);
+}
+section:last-of-type{border-bottom:none;}
+.sec-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:8px; }
+.sec-num{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:14px; color:var(--fuel); }
+.sec-title{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:26px; letter-spacing:.5px; }
+.sec-sub{ color:var(--dim); font-size:13.5px; margin-bottom:34px; }
+.lede{ font-size:15px; color:var(--chrome); max-width:60ch; margin-bottom:34px; }
+
+/* ---------- stat row ---------- */
+.stat-row{ display:flex; flex-wrap:wrap; gap:28px; margin:26px 0 34px; }
+.stat{ min-width:120px; }
+.stat b{ display:block; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:26px; color:var(--fuel); }
+.stat span{ font-size:12px; color:var(--dim); }
+
+/* ---------- info grid ---------- */
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:10px; }
+@media (max-width:560px){ .grid2{grid-template-columns:1fr;} }
+.card{
+  background:var(--panel); border:1px solid var(--steel); border-radius:4px;
+  padding:18px 20px;
+}
+.card .k{ font-family:'Rajdhani',sans-serif; font-weight:600; font-size:12px; letter-spacing:1px; color:var(--warn); margin-bottom:6px; }
+.card .v{ font-size:13.5px; color:var(--chrome); }
+
+/* ---------- process flow ---------- */
+.flow{ display:flex; flex-wrap:wrap; gap:0; margin:20px 0 10px; border:1px solid var(--steel); border-radius:4px; overflow:hidden; }
+.flow .step{ flex:1; min-width:150px; padding:16px 18px; background:var(--panel); border-right:1px solid var(--steel); }
+.flow .step:last-child{border-right:none;}
+.flow .step .tag{ font-family:'Rajdhani',sans-serif; font-size:11px; color:var(--fuel); letter-spacing:1px; margin-bottom:5px; }
+.flow .step p{ font-size:12.5px; color:var(--chrome); }
+
+/* ---------- accordion ---------- */
+details{
+  border:1px solid var(--steel); border-radius:4px; margin-bottom:10px;
+  background:var(--panel); overflow:hidden;
+}
+summary{
+  list-style:none; cursor:pointer; padding:15px 18px;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:'Rajdhani',sans-serif; font-weight:600; font-size:14.5px; letter-spacing:.3px;
+}
+summary::-webkit-details-marker{display:none;}
+summary .arrow{ color:var(--dim); transition:transform .2s ease; font-size:11px; }
+details[open] summary .arrow{ transform:rotate(180deg); }
+.acc-body{ padding:0 18px 18px; font-size:13.5px; color:var(--chrome); }
+.acc-body ul{ padding-left:18px; margin-top:6px; }
+.acc-body li{ margin-bottom:4px; }
+.rank-badge{
+  font-family:'Rajdhani',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:1px;
+  padding:2px 8px; border-radius:3px; margin-right:8px;
+}
+.rk-rookie{background:#2a2f36; color:var(--chrome);}
+.rk-pro{background:#1f3a3a; color:#7fd9d9;}
+.rk-ace{background:#3a2c14; color:var(--fuel);}
+.rk-legend{background:#3a1414; color:#ff8a80;}
+
+/* ---------- team accordion ---------- */
+.team-dot{ display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:10px; }
+.team-comp{ font-family:'Rajdhani',sans-serif; font-size:11px; color:var(--dim); font-weight:500; margin-left:8px; }
+.fund{ font-family:'Rajdhani',sans-serif; font-size:11.5px; color:var(--fuel); letter-spacing:.5px; margin-bottom:6px; }
+
+/* ---------- calendar ---------- */
+.cal{ position:relative; padding-left:22px; margin-top:10px; }
+.cal::before{ content:''; position:absolute; left:5px; top:4px; bottom:4px; width:1px; background:var(--steel); }
+.cal-item{ position:relative; padding-bottom:26px; }
+.cal-item::before{
+  content:''; position:absolute; left:-22px; top:4px; width:9px; height:9px; border-radius:50%;
+  background:var(--fuel); box-shadow:0 0 0 3px var(--void);
+}
+.cal-item .when{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:12px; color:var(--fuel); letter-spacing:.5px; }
+.cal-item .what{ font-size:13.5px; margin-top:2px; color:var(--text); }
+.cal-item .desc{ font-size:12px; color:var(--dim); margin-top:2px; }
+
+footer{
+  text-align:center; padding:50px 24px 70px; color:var(--dim); font-size:11.5px;
+  font-family:'Rajdhani',sans-serif; letter-spacing:1px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">OVERCLOCK CIRCUIT</div>
+  <ul>
+    <li><a href="#world">세계관</a></li>
+    <li><a href="#circuit">서킷</a></li>
+    <li><a href="#machine">머신</a></li>
+    <li><a href="#rank">등급</a></li>
+    <li><a href="#teams">참가팀</a></li>
+    <li><a href="#calendar">캘린더</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">CLASSIFIED · THE GRID INTERNAL DOCUMENT</div>
+  <h1 class="disp">OVERCLOCK<br><em>CIRCUIT</em></h1>
+  <p>목숨을 걸고 완주하는 자만이 살아남는 사설 데스레이스. 일상, 동거, 로맨스 위에 얹힌 압박과 긴장의 세계.</p>
+  <div class="scroll disp">SCROLL DOWN</div>
+</div>
+
+<div class="marquee"><span>⚠ BUMPING &amp; DEMOLITION ALLOWED ⚠ NO INSURANCE COVERAGE ⚠ LIVE BETTING NOW OPEN ⚠ UNLIMITED PIT STOP ⚠ ENTER AT YOUR OWN RISK ⚠ BUMPING &amp; DEMOLITION ALLOWED ⚠ NO INSURANCE COVERAGE ⚠ LIVE BETTING NOW OPEN ⚠ UNLIMITED PIT STOP ⚠ ENTER AT YOUR OWN RISK ⚠</span></div>
+
+<!-- 01 WORLD -->
+<section id="world">
+  <div class="sec-head"><span class="sec-num disp">01</span><span class="sec-title disp">세계관</span></div>
+  <div class="sec-sub">가상 현대 도시 · 일상 &amp; 데스레이스</div>
+  <p class="lede">현실적인 주거환경과 직장, 상업시설, 대중교통이 존재하는 평범한 가상 현대 도시. 그러나 그 이면에는 목숨을 걸고 완주해야 하는 사설 데스레이스 'OVERCLOCK CIRCUIT'이 흐른다. 이야기는 일상·동거·로맨스·코미디를 중심으로 흘러가지만, 서킷 위에서만큼은 압박감과 긴장감이 끈질기게 이어진다.</p>
+  <div class="stat-row">
+    <div class="stat"><b class="disp">40~45분</b><span>스테이지 1회 길이</span></div>
+    <div class="stat"><b class="disp">3개</b><span>하루 스테이지 수</span></div>
+    <div class="stat"><b class="disp">8팀</b><span>공식 참가팀</span></div>
+    <div class="stat"><b class="disp">9라운드</b><span>연간 시즌 규모</span></div>
+  </div>
+</section>
+
+<!-- 02 CIRCUIT -->
+<section id="circuit">
+  <div class="sec-head"><span class="sec-num disp">02</span><span class="sec-title disp">OVERCLOCK CIRCUIT</span></div>
+  <div class="sec-sub">더 그리드(The Grid) 주최 · 비공식 데스레이스</div>
+  <p class="lede">글로벌 군수기업, 신흥 IT 재벌, 불법 카지노 연합으로 구성된 비밀 위원회 '더 그리드'가 주최한다. 겉으로는 자율주행 및 최첨단 공학의 극한 테스트장이지만, 안으로는 전 세계 거물들의 억 단위 이권 다툼과 자금 세탁을 위한 사설 데스레이스다.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="k disp">표면적 명분</div>
+      <div class="v">자율주행 및 최첨단 공학의 극한 테스트장</div>
+    </div>
+    <div class="card">
+      <div class="k disp">실질적 목적</div>
+      <div class="v">거물들의 억대 이권 다툼과 자금 세탁 창구</div>
+    </div>
+    <div class="card">
+      <div class="k disp">기본 룰</div>
+      <div class="v">Bumping &amp; Demolition 허용 · 무제한 피트스톱</div>
+    </div>
+    <div class="card">
+      <div class="k disp">진행 방식</div>
+      <div class="v">스테이지 스프린트 · 하루 3스테이지 단기 토너먼트</div>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="step">
+      <div class="tag disp">STAGE 1 · 40분</div>
+      <p>순위 결정 및 차체 충돌 가능</p>
+    </div>
+    <div class="step">
+      <div class="tag disp">PIT TIME · 1시간 30분</div>
+      <p>정비, 치료, VIP·스폰서 응대</p>
+    </div>
+    <div class="step">
+      <div class="tag disp">STAGE 2 &amp; 3</div>
+      <p>부서진 머신으로 목숨 걸고 들어가는 최종 결승</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 MACHINE -->
+<section id="machine">
+  <div class="sec-head"><span class="sec-num disp">03</span><span class="sec-title disp">머신 스펙</span></div>
+  <div class="sec-sub">OVC-SPEC · 오픈휠 레이스 머신</div>
+  <p class="lede">초고성능 오픈휠 형태의 차체에 내구성을 위한 특수 강화 탄소섬유 외갑을 두른다. 최고속도 420km/h를 넘나들며, 대당 가격은 300억~500억 원에 달해 파손 시 팀 재정에 치명타를 입힌다.</p>
+
+  <div class="stat-row">
+    <div class="stat"><b class="disp">420km/h↑</b><span>최고속도</span></div>
+    <div class="stat"><b class="disp">300~500억</b><span>대당 가격 (원)</span></div>
+  </div>
+
+  <div class="card" style="border-color:#3a1a17;">
+    <div class="k disp" style="color:var(--warn);">오버클럭 부스트</div>
+    <div class="v">차수의 신체 반응 속도와 엔진 출력을 한계치까지 쥐어짜는 마력·유압 분사 시스템. 사용 시 머신 온도가 급격히 치솟으며, 과다 사용 시 신체 손상과 판단력 저하로 이어진다.</div>
+  </div>
+</section>
+
+<!-- 04 RANK -->
+<section id="rank">
+  <div class="sec-head"><span class="sec-num disp">04</span><span class="sec-title disp">등급 체계</span></div>
+  <div class="sec-sub">시즌 누적 순위 · 생존 스테이지 수 · 스폰서 평가 종합</div>
+  <p class="lede">등급은 그리드가 비공식으로 산정하며 공식 발표는 없다. 시즌마다 재산정되고, 대형 사고나 기권 시 강등될 수 있다.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="k disp"><span class="rank-badge rk-rookie">ROOKIE</span>루키 · 약 50%</div>
+      <div class="v">스테이지 1 예선 통과가 목표이며 결승 진출 사례는 드물다. VIP 접견 및 스폰서 협상 참여가 금지된다.</div>
+    </div>
+    <div class="card">
+      <div class="k disp"><span class="rank-badge rk-pro">PRO</span>프로 · 약 35%</div>
+      <div class="v">결승 스테이지에 안정적으로 진입하며 소액 스폰서 계약이 가능하다. 상위 베팅 라운드 접근은 금지된다.</div>
+    </div>
+    <div class="card">
+      <div class="k disp"><span class="rank-badge rk-ace">ACE</span>에이스 · 약 12%</div>
+      <div class="v">매 시즌 우승 후보로 꼽히며 '더 그리드'와 직접 접견이 가능하다.</div>
+    </div>
+    <div class="card">
+      <div class="k disp"><span class="rank-badge rk-legend">LEGEND</span>레전드 · 3% 미만</div>
+      <div class="v">리그 룰의 비공식 예외를 요청할 수 있고 은퇴 후에도 영향력을 유지한다. 완전한 자유는 없다 — 사실상 그리드의 자산으로 취급된다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ECONOMY -->
+<section id="economy">
+  <div class="sec-head"><span class="sec-num disp">05</span><span class="sec-title disp">수익 구조 &amp; 리스크</span></div>
+  <div class="sec-sub">현금 흐름은 즉각적이나, 위험은 전적으로 아래로 흐른다</div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="k disp">수익 활동</div>
+      <div class="v">스테이지 직후 현금·암호화폐 즉시 송금, 베팅 수수료 배분(1~3%), 그리드 직속 채무 탕감권, VIP 광고·스폰서십</div>
+    </div>
+    <div class="card">
+      <div class="k disp">비상·실패 상황</div>
+      <div class="v">차수 사망·중상 및 머신 전손 시 보험이 없어 팀이 전액 부담하며, 미달성 채무는 이자가 늘어난다</div>
+    </div>
+    <div class="card">
+      <div class="k disp">손실 부담 주체</div>
+      <div class="v">하위 팀과 루키 차수가 리스크를 떠안는다. 그리드와 스폰서는 채무 관계를 이용해 통제를 강화한다</div>
+    </div>
+    <div class="card">
+      <div class="k disp">세력별 입장</div>
+      <div class="v">그리드는 배당 수익과 통제권, 스폰서는 도박 수익, 차수는 신체와 목숨을 담보로 한 현금 흐름을 원한다</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 TEAMS -->
+<section id="teams">
+  <div class="sec-head"><span class="sec-num disp">06</span><span class="sec-title disp">공식 참가팀</span></div>
+  <div class="sec-sub">8개 팀 · 자금 출처와 성향이 뚜렷하게 갈린다</div>
+
+  <details open>
+    <summary><span><span class="team-dot" style="background:#eee;"></span>BLACK HALO <span class="team-comp disp">ACE 1 · PRO 1</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">유럽계 방산기업</div><p>무광 흑+백. 가장 교과서적인 운영. 대처럼 엄격하지만 피트 크루 사이에는 묘한 가족애가 흐른다.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#9b6bd6;"></span>VANTA <span class="team-comp disp">ACE 2</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">글로벌 카지노 컨소시엄</div><p>흑+보라. 경기 자체를 도박판으로 본다. 화려한 VIP 파티와 살벌한 피트가 극명하게 대비된다.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#d4af37;"></span>IRON JACKAL <span class="team-comp disp">PRO 2</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">민간 군사기업</div><p>군청+황. 범핑과 차간 압박전에 특화됐다. 과묵하고 냉철하며 충성심이 높다.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#e0e0e0;"></span>SILVER FOX <span class="team-comp disp">ACE 1 · PRO 1</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">여러 기업의 비공식 후원</div><p>은+적. 차체 균형이 뛰어나고 코너 탈출이 빠르다. 레이싱을 스포츠로 보는 낭만파.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#ffd76a;"></span>VALKYRIE <span class="team-comp disp">ACE 2</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">차 제조사 + 석유기업</div><p>백+금. 스타급 차수들로 구성되어 화려하고 오만하며, 다른 팀을 노골적으로 내려다본다.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#c0392b;"></span>WILD 0 <span class="team-comp disp">LEGEND 1 · ACE 1</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">정체불명의 개인 후원자</div><p>은+적. 평범해 보이는 차체지만 한계 주행 능력이 뛰어나다. 외부 인터뷰는 없으며, 팀보다 차수가 더 유명하다.</p></div>
+  </details>
+
+  <details>
+    <summary><span><span class="team-dot" style="background:#3a5fcd;"></span>APEX <span class="team-comp disp">PRO 2</span></span><span class="arrow">▼</span></summary>
+    <div class="acc-body"><div class="fund disp">사채업자 &amp; 불법 베팅 고리대금</div><p>흑+파. 고함과 담배 연기, 불온한 분위기가 감돈다. 그러나 벼랑 끝에 몰린 자들 특유의 기묘한 유대감이 있다.</p></div>
+  </details>
+</section>
+
+<!-- 07 CALENDAR -->
+<section id="calendar">
+  <div class="sec-head"><span class="sec-num disp">07</span><span class="sec-title disp">연간 시즌 캘린더</span></div>
+  <div class="sec-sub">2월 프리시즌부터 11월 파이널까지</div>
+
+  <div class="cal">
+    <div class="cal-item">
+      <div class="when disp">2월</div>
+      <div class="what">프리시즌 &amp; 쇼다운</div>
+      <div class="desc">중순~말, 비공식 섀시 시운전 및 생체 오버클럭 적합성 검사. 팀 차수 계약 최종 승인.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">3월 중순 · R1</div>
+      <div class="what">그레이브야드</div>
+      <div class="desc">시즌 개막, 극단적 환경에서 치러지는 상반기 첫 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">4월 중순 · R2</div>
+      <div class="what">데스 바벨</div>
+      <div class="desc">상반기 두 번째 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">5월 하순 · R3</div>
+      <div class="what">네온 슬럼</div>
+      <div class="desc">상반기 마지막 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">6월</div>
+      <div class="what">미드시즌 정비 휴식기</div>
+      <div class="desc">약 3주간 공식 레이스 일시 중단. 머신 프레임 완전 재건, 더 그리드 이자 정산, 차수 치료 및 팀 하우스 휴식.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">7월 중순 · R4</div>
+      <div class="what">블랙 포레스트</div>
+      <div class="desc">중반기 첫 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">8월 중순 · R5</div>
+      <div class="what">아이언 오어</div>
+      <div class="desc">중반기 두 번째 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">9월 하순 · R6</div>
+      <div class="what">리바이어던</div>
+      <div class="desc">중반기 마지막 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">10월 중순 · R7</div>
+      <div class="what">파벨라 드래프트</div>
+      <div class="desc">하반기 &amp; 파이널 첫 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">11월 초 · R8</div>
+      <div class="what">카지노 스트립</div>
+      <div class="desc">파이널 두 번째 라운드.</div>
+    </div>
+    <div class="cal-item">
+      <div class="when disp">11월 말 · R9</div>
+      <div class="what">더 파이널 그리드</div>
+      <div class="desc">시즌 최종 라운드. 그해의 등급이 최종 재산정된다.</div>
+    </div>
+  </div>
+</section>
+
+<footer>THE GRID · INTERNAL USE ONLY — UNAUTHORIZED ACCESS PROHIBITED</footer>
+
+</body>
+</html>
