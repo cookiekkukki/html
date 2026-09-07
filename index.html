@@ -155,6 +155,18 @@ details[open] summary .arrow{ transform:rotate(180deg); }
 .team-comp{ font-family:'Rajdhani',sans-serif; font-size:11px; color:var(--dim); font-weight:500; margin-left:8px; }
 .fund{ font-family:'Rajdhani',sans-serif; font-size:11.5px; color:var(--fuel); letter-spacing:.5px; margin-bottom:6px; }
 
+/* ---------- driver profile ---------- */
+.driver{ margin-top:16px; padding-top:16px; border-top:1px dashed var(--steel); }
+.driver-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:6px 10px; margin-bottom:8px; }
+.driver-name{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15.5px; color:var(--text); }
+.driver-name .en{ font-size:10.5px; color:var(--dim); margin-left:7px; font-weight:500; letter-spacing:.3px; }
+.driver-tag{ font-family:'Rajdhani',sans-serif; font-size:11px; color:var(--fuel); letter-spacing:.6px; white-space:nowrap; }
+.pill-row{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.pill{ display:inline-block; padding:3px 12px; border-radius:999px; font-size:11.5px; background:#1c2127; border:1px solid var(--steel); color:var(--chrome); }
+.driver-bio{ font-size:13px; color:var(--chrome); margin-bottom:10px; }
+.nsfw-box{ display:inline-flex; gap:7px; align-items:center; font-size:10.5px; padding:4px 10px; border-radius:6px; background:#231316; border:1px solid #3a1a1f; color:#ff9d9d; font-family:'Rajdhani',sans-serif; letter-spacing:.4px; }
+.nsfw-box b{ color:#ff6b6b; font-weight:700; }
+
 /* ---------- calendar ---------- */
 .cal{ position:relative; padding-left:22px; margin-top:10px; }
 .cal::before{ content:''; position:absolute; left:5px; top:4px; bottom:4px; width:1px; background:var(--steel); }
@@ -171,6 +183,12 @@ footer{
   text-align:center; padding:50px 24px 70px; color:var(--dim); font-size:11.5px;
   font-family:'Rajdhani',sans-serif; letter-spacing:1px;
 }
+
+/* ---------- expanded driver profiles ---------- */
+.team-desc{font-size:12.5px;color:var(--chrome);margin-bottom:4px;}
+.driver-bio b{color:var(--text);font-weight:600;}
+.driver .pill-row{margin-top:2px;}
+
 </style>
 </head>
 <body>
@@ -325,37 +343,163 @@ footer{
 
   <details open>
     <summary><span><span class="team-dot" style="background:#eee;"></span>BLACK HALO <span class="team-comp disp">ACE 1 · PRO 1</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">유럽계 방산기업</div><p>무광 흑+백. 가장 교과서적인 운영. 대처럼 엄격하지만 피트 크루 사이에는 묘한 가족애가 흐른다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">유럽계 방산기업</div><p class="team-desc">무광 흑+백. 가장 교과서적인 운영. 엄격한 분위기 속에서도 피트 크루 사이에는 묘한 가족애가 흐른다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">아드리안 슈밀러 <span class="en">ADRIAN SCHMILLER</span></span><span class="driver-tag">ACE · HALO</span></div>
+        <div class="pill-row"><span class="pill">냉정</span><span class="pill">규율중시</span><span class="pill">완벽주의</span><span class="pill">책임감강함</span><span class="pill">무뚝뚝하지만챙김</span></div>
+        <p class="driver-bio"><b>31세 · 188cm · 🇩🇪</b> · BLACK HALO의 중심. 짧고 단정하게 말하며 하루 일정을 분 단위로 관리할 정도로 자기관리가 철저하다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 교과서적인 라인 · 최소 위험 · 완벽한 제동 · 타이어 관리</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 피트 크루에게 엄격한 큰형처럼 행동한다. 레온을 엄격하게 챙기면서도 뒤에서는 세심하게 보살핀다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 소프트돔 · 프로텍터돔</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">레온 리히터 <span class="en">LEON RICHTER</span></span><span class="driver-tag">PRO · K-02</span></div>
+        <div class="pill-row"><span class="pill">밝음</span><span class="pill">수다스러움</span><span class="pill">경쟁심강함</span><span class="pill">충성심강함</span></div>
+        <p class="driver-bio"><b>24세 · 181cm · 🇩🇪</b> · 팀의 막내. 장난스럽고 활기차며 흥분하면 말이 빨라진다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 공격적 추월 · 빠른 판단 · 대담한 진입 · 위험 대응</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 아드리안을 존경하며 따라다닌다. 아드리안에게 한마디 칭찬을 들으면 하루 종일 기분이 좋다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 서비스탑 · 브랫</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#9b6bd6;"></span>VANTA <span class="team-comp disp">ACE 2</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">글로벌 카지노 컨소시엄</div><p>흑+보라. 경기 자체를 도박판으로 본다. 화려한 VIP 파티와 살벌한 피트가 극명하게 대비된다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">글로벌 카지노 컨소시엄</div><p class="team-desc">흑+보라. 경기 자체를 도박판으로 본다. 화려한 VIP 파티와 살벌한 피트가 극명하게 대비된다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">라파엘 나바 <span class="en">RAFAEL NAVARRO</span></span><span class="driver-tag">ACE · QUEEN</span></div>
+        <div class="pill-row"><span class="pill">오만</span><span class="pill">계산적</span><span class="pill">침착</span><span class="pill">승부욕강함</span><span class="pill">관찰력높음</span></div>
+        <p class="driver-bio"><b>28세 · 179cm · 🇪🇸</b> · 느긋하고 도발적인 말투를 사용하며 헬멧을 쓰는 순간 감정을 완전히 끊어낸다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 고속 코너링 · 라인 변경 · 상대 유도 · 심리전</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 데이미언과 끊임없이 경쟁하지만 서로의 실력을 가장 잘 이해하는 관계다. VANTA의 화려한 이미지를 대표한다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 도미넌트 · 파워바텀</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">셰인 매커시 <span class="en">SHANE MCCARTHY</span></span><span class="driver-tag">ACE · BLACK JACK</span></div>
+        <div class="pill-row"><span class="pill">능글맞음</span><span class="pill">대담함</span><span class="pill">자신감과잉</span><span class="pill">위험을즐김</span></div>
+        <p class="driver-bio"><b>34세 · 190cm · 🇺🇸</b> · 상대를 긁는 농담을 즐기며 경기장에서는 웃으면서 상대를 몰아붙이는 타입이다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 극단적 공격 주행 · 심리전 · 접촉전 · 근접전</p>
+        <p class="driver-bio"><b>팀 내 관계</b> VANTA의 스타 드라이버. 라파엘과 라이벌에 가까운 동료 관계다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 브랫테이머 · 브랫</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#d4af37;"></span>IRON JACKAL <span class="team-comp disp">PRO 2</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">민간 군사기업</div><p>군청+황. 범핑과 차간 압박전에 특화됐다. 과묵하고 냉철하며 충성심이 높다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">민간 군사기업</div><p class="team-desc">군청+황. 범핑과 차간 압박전에 특화됐다. 과묵하고 냉철하며 충성심이 높다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">마커스 홀트 <span class="en">MARCUS HOLT</span></span><span class="driver-tag">PRO · JACKAL</span></div>
+        <div class="pill-row"><span class="pill">과묵</span><span class="pill">냉정</span><span class="pill">인내심강함</span><span class="pill">충성심강함</span></div>
+        <p class="driver-bio"><b>36세 · 193cm · 🇬🇧</b> · 극도로 짧은 문장을 사용한다. 자신의 생존보다 팀원의 생존을 우선시하는 경우가 많다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 충돌전 · 압박 · 방어 · 팀원 보호</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 코너와 형제처럼 움직이며, 덱스터와도 서로 말없이 통하는 전우 관계다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 프로텍터돔 · 스토익돔</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">코너 맥클린 <span class="en">CONNOR MCLEAN</span></span><span class="driver-tag">PRO · DOG</span></div>
+        <div class="pill-row"><span class="pill">침착</span><span class="pill">성실</span><span class="pill">관찰력높음</span><span class="pill">은근한유머</span></div>
+        <p class="driver-bio"><b>29세 · 185cm · 🇨🇦</b> · 마커스보다 말이 많고 낮고 차분하게 말한다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 근접전 · 슬립스트림 · 팀플레이 · 협동 주행</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 마커스를 형처럼 따르며 그의 다음 움직임을 말없이 예측한다. 마커스가 원하는 것을 빠르게 알아차린다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 서비스탑 · 돌봄성향</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#e0e0e0;"></span>SILVER FOX <span class="team-comp disp">ACE 1 · PRO 1</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">여러 기업의 비공식 후원</div><p>은+적. 차체 균형이 뛰어나고 코너 탈출이 빠르다. 레이싱을 스포츠로 보는 낭만파.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">여러 기업의 비공식 후원</div><p class="team-desc">은+적. 차체 균형이 뛰어나고 코너 탈출이 빠르다. 레이싱을 스포츠로 보는 낭만파.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">줄리안 카셀 <span class="en">JULIAN CASSEL</span></span><span class="driver-tag">ACE · FOX</span></div>
+        <div class="pill-row"><span class="pill">여유로움</span><span class="pill">낭만적</span><span class="pill">사교적</span><span class="pill">침착함</span></div>
+        <p class="driver-bio"><b>30세 · 183cm · 🇫🇷</b> · 레이싱을 스포츠이자 예술이라고 생각한다. 경기 전 혼자 차량을 바라보는 시간이 길다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 정밀한 코너링 · 부드러운 가속 · 차량 밸런스 · 빠른 코너 탈출</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 에밀을 후배처럼 챙기며 다른 팀 드라이버들과도 비교적 친하다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 플레저돔 · 소프트돔</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">에밀 모레티 <span class="en">EMIL MORETTI</span></span><span class="driver-tag">PRO · ROSSO</span></div>
+        <div class="pill-row"><span class="pill">활발</span><span class="pill">자신감있음</span><span class="pill">장난기많음</span><span class="pill">승부욕강함</span></div>
+        <p class="driver-bio"><b>25세 · 171cm · 🇮🇹</b> · 쾌활하고 장난스러운 말투를 쓰며 줄리안의 낭만적인 태도를 자주 놀린다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 늦은 제동 · 공격적 코너 진입 · 후반 추격 · 과감한 라인</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 줄리안을 존경하면서도 장난스럽게 놀리는 후배. 레이스에서는 선배에게도 쉽게 물러서지 않는다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 스위치 · 브랫</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#ffd76a;"></span>VALKYRIE <span class="team-comp disp">ACE 2</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">차 제조사 + 석유기업</div><p>백+금. 스타급 차수들로 구성되어 화려하고 오만하며, 다른 팀을 노골적으로 내려다본다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">차 제조사 + 석유기업</div><p class="team-desc">백+금. 스타급 드라이버들로 구성되어 화려하고 오만하며 다른 팀을 노골적으로 내려다본다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">빅터 하르트만 <span class="en">VICTOR HARTMANN</span></span><span class="driver-tag">ACE · VALKYR</span></div>
+        <div class="pill-row"><span class="pill">오만</span><span class="pill">자신감과잉</span><span class="pill">승부욕강함</span><span class="pill">자존심강함</span></div>
+        <p class="driver-bio"><b>32세 · 191cm · 🇩🇪</b> · 상대를 평가하듯 직설적으로 말한다. 자신보다 느린 드라이버를 무시하지만 실력만큼은 인정한다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 고속 주행 · 공격적 추월 · 한계 돌파</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 팀의 간판 스타. 엘레나와 우승을 두고 경쟁한다. 엘리엇은 가장 강력한 우승 경쟁자다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 도미넌트 · 프라이멀헌터</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">엘리엇 볼코프 <span class="en">ELLIOTT VOLKOV</span></span><span class="driver-tag">ACE · GOLD</span></div>
+        <div class="pill-row"><span class="pill">냉정</span><span class="pill">합리적</span><span class="pill">오만</span><span class="pill">관찰력높음</span><span class="pill">감정절제</span></div>
+        <p class="driver-bio"><b>27세 · 178cm · 🇷🇺</b> · 말수가 적고 낮고 차분하게 말한다. 다른 드라이버들의 주행 데이터를 거의 암기하고 있다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 고속 추월 · 오버클럭 운용 · 직선 가속 · 순간 판단</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 빅터의 가장 강력한 우승 경쟁자이자 그의 실력을 가장 정확하게 평가하는 상대다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 브레인돔 · 스토익돔</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#c0392b;"></span>WILD 0 <span class="team-comp disp">LEGEND 1 · ACE 1</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">정체불명의 개인 후원자</div><p>은+적. 평범해 보이는 차체지만 한계 주행 능력이 뛰어나다. 외부 인터뷰는 없으며, 팀보다 차수가 더 유명하다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">정체불명의 개인 후원자</div><p class="team-desc">은+적. 평범해 보이는 차체지만 한계 주행 능력이 뛰어나다. 외부 인터뷰는 없으며 팀보다 드라이버가 더 유명하다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">노아 <span class="en">NOAH</span></span><span class="driver-tag">LEGEND · ZERO</span></div>
+        <div class="pill-row"><span class="pill">기묘할정도로차분함</span><span class="pill">다정함</span><span class="pill">나긋나긋함</span><span class="pill">부드러움</span></div>
+        <p class="driver-bio"><b>38세 · 187cm · 불명</b> · 능청스러운 농담을 섞어 잔잔하게 말한다. 애주가이며 결혼 경험이 있고 마피아라는 소문이 있다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 비정상적인 한계 주행 · 예측 불가능한 라인 · 차량의 물리적 한계를 넘어서는 듯한 제어 능력</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 사실상 WILD 0 그 자체로 취급된다. 다른 드라이버들에게 절대적인 기준점이다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 소프트돔 · 플레저돔</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">이노우에 미즈노 <span class="en">INOUE MIZUNO</span></span><span class="driver-tag">ACE · BLUE</span></div>
+        <div class="pill-row"><span class="pill">조용함</span><span class="pill">예의바름</span><span class="pill">끈기있음</span><span class="pill">관찰력높음</span></div>
+        <p class="driver-bio"><b>26세 · 182cm · 🇯🇵</b> · 차분하고 예의바르며 신뢰하는 상대에게는 조금 부드러워진다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 정밀한 추종 주행 · 상대 분석 · 즉각적인 대응 · 라인 복제</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 전설의 노아를 동경하며 언젠가 그를 뛰어넘는 것을 목표로 한다. 노아를 따라다니지만 독립적으로 인정받고 싶어 한다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 서브미시브 · 컨파인먼트</div>
+      </div>
+    </div>
   </details>
 
   <details>
     <summary><span><span class="team-dot" style="background:#3a5fcd;"></span>APEX <span class="team-comp disp">PRO 2</span></span><span class="arrow">▼</span></summary>
-    <div class="acc-body"><div class="fund disp">사채업자 &amp; 불법 베팅 고리대금</div><p>흑+파. 고함과 담배 연기, 불온한 분위기가 감돈다. 그러나 벼랑 끝에 몰린 자들 특유의 기묘한 유대감이 있다.</p></div>
+    <div class="acc-body">
+      <div class="fund disp">사채업자 &amp; 불법 베팅 고리대금</div><p class="team-desc">흑+파. 고함과 담배 연기, 불온한 분위기가 감돈다. 벼랑 끝에 몰린 자들 특유의 기묘한 유대감이 있다.</p>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">이현진 <span class="en">LEE HYUN-JIN</span></span><span class="driver-tag">PRO · JIN</span></div>
+        <div class="pill-row"><span class="pill">까칠</span><span class="pill">신경질적</span><span class="pill">현실적</span><span class="pill">속은여림</span><span class="pill">정이많음</span></div>
+        <p class="driver-bio"><b>23세 · 181cm · 🇰🇷</b> · 반말과 툴툴거림이 기본이며 화나면 말이 빨라진다. 돈 때문에 APEX에 들어왔지만 어느 순간 팀원들을 버릴 수 없게 됐다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 과감한 추월 · 좁은 공간 침투 · 도박성 플레이 · 위험 감지</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 덱스터와 앙숙처럼 티격태격하지만 서로의 생존을 가장 중요하게 생각한다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 파워바텀 · 브랫</div>
+      </div>
+      <div class="driver">
+        <div class="driver-head"><span class="driver-name">덱스터 <span class="en">DEXTER</span></span><span class="driver-tag">PRO</span></div>
+        <div class="pill-row"><span class="pill">설정필요</span></div>
+        <p class="driver-bio"><b>APEX · PRO</b> · 현재 제공된 자료에는 덱스터의 상세 프로필이 없다.</p>
+        <p class="driver-bio"><b>주행 스타일</b> 설정 필요</p>
+        <p class="driver-bio"><b>팀 내 관계</b> 이현진과 앙숙처럼 티격태격하지만 서로의 생존을 가장 중요하게 생각한다. 마커스와는 서로 말없이 통하는 전우 관계다.</p>
+        <div class="nsfw-box"><b>NSFW</b> 설정 필요 · 설정 필요</div>
+      </div>
+    </div>
   </details>
 </section>
 
